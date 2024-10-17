@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>xd</title>
+
+    <style>
+
+        body{
+            background-color: lightcoral;
+        }
+
+        .painel{
+
+            margin: auto;
+            background-color: white; 
+            width: 500px;
+            height: 500px;
+            border-radius: 20px;
+            text-align: center;
+            padding-top: 50px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        #sim{
+            height: 40px;
+            width: 60px;
+            background-color: red;
+            border: 2px solid black; 
+            border-radius: 10px;
+            color: white;
+            margin-left: -60px;
+        }
+
+        #nao{
+            position: absolute;
+            height: 40px;
+            width: 60px;
+            background-color: red;
+            border: 2px solid black; 
+            border-radius: 10px;
+            color: white;
+            margin-left: 10px;
+        }
+
+        #img-container{
+            text-align: center;
+            display: block;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    
+    <div class="painel">
+
+        <h1>oi vida, como voce esta?</h1>
+        <h2>aceita sair cmg hoje? :3</h2>
+
+        <a href="https://www.youtube.com/watch?v=DyitPj7dI2A&ab_channel=caliopepratter"><button id="sim">sim! </button></a>
+        <button onmouseover="fuja()" id="nao">nao! </button>
+
+        <span class="img-container">
+            <img src="https://st2.depositphotos.com/1001911/12400/v/950/depositphotos_124005594-stock-illustration-emoticon-with-rose-between-teeth.jpg" alt="" width="500" height="200" style="transform: translate(0px, 50px);">
+        </span>
+        
+    </div>
+
+    <script>
+        function fuja(){
+            var botaonao = document.getElementById("nao")
+
+            var largurajanela = window.innerWidth;
+            var alturajanela = window.innerHeight;
+
+            var maxX = largurajanela - botaonao.offsetWidth;
+            var maxY = alturajanela - botaonao.offsetHeight;
+
+            var aleatorioX = Math.floor(Math.random() * maxX);
+            var aleatorioY = Math.floor(Math.random() * maxY);
+
+            botaonao.style.left = aleatorioX + "px";
+            botaonao.style.top = aleatorioY + "px";
+        }
+
+    </script>
+
+</body>
+</html>
